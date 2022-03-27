@@ -10,7 +10,7 @@ function Header() {
         <NavBar />
       </div>
       <div className="user-profile">
-        <img src={ProfileImage} alt="profile" width="50px" />
+        <img src={ProfileImage} alt="profile" width="30px" />
       </div>
 
     </div>

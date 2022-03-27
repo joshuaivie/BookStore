@@ -5,13 +5,17 @@ import Book from './Book';
 function BookList({ books }) {
   return (
     <div className="book-list">
-      <ul>
-        {books.map((book) => (
-          <li key={book?.id}>
-            <Book author={book?.author} title={book?.title} />
-          </li>
-        ))}
-      </ul>
+      {books.length > 0
+        ? (
+          <ul>
+            {books.map((book) => (
+              <li key={book?.id}>
+                <Book author={book?.author} title={book?.title} />
+              </li>
+            ))}
+          </ul>
+        )
+        : <div>No Books Yet</div>}
     </div>
   );
 }
