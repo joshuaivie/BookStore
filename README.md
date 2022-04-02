@@ -8,7 +8,7 @@
 
 ## Live Demo
 
-[Math Magicians App](https://joshuaivie.github.io/BookStore)
+[Book Store App](https://joshuaivie.github.io/BookStore)
 
 ## Built With
 
@@ -33,7 +33,7 @@
   git clone https://github.com/joshuaivie/BookStore
   ```
   ```
-  cd MathMagicians
+  cd BookStore
   ```
 - Install dependencies
 
