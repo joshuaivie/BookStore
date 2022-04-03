@@ -1,49 +1,30 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import BookList from '../components/Books/BookList';
 import BookForm from '../components/Books/BookForm';
-// import LoadingScreen from '../components/Shared/LoadingScreen';
+import { getBooks } from '../redux/books/books';
 
 function Books() {
+  const bookState = useSelector((state) => state.books);
+  const dispatch = useDispatch();
 
-  const books = useSelector((state) => state.books);
-  console.log(books);
-  // useEffect(() => {
-  //   setLoadingBookData(true);
-  //   fetch('../data/books.json', {
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       Accept: 'application/json',
-  //     },
-  //   })
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         return response.json();
-  //       }
-  //       throw response;
-  //     })
-  //     .then((data) => {
-  //       setBookData(data);
-  //       setCategories([]);
-  //     })
-  //     .catch((error) => {
-  //       console.log('Error loading data', error);
-  //     })
-  //     .finally(() => {
-  //       setLoadingBookData(false);
-  //     });
-  // }, []);
+  useEffect(() => {
+    dispatch(getBooks());
+  }, []);
+
+  const { books, loading } = bookState;
+  const catagories = ['Fiction', 'Business', 'Spiritual', 'Romance', 'Tech'];
 
   return (
     <div>
-      {/* {loadingBookData ? <LoadingScreen /> : ( */}
-      <div>
-        {' '}
-        <BookList books={books} />
-        {' '}
-        <BookForm categories={[]} />
-      </div>
-      {/* )} */}
+      {loading ? '' : (
+        <div>
+          {' '}
+          <BookList books={books} />
+          {' '}
+          <BookForm categories={catagories} />
+        </div>
+      )}
     </div>
   );
 }

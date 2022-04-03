@@ -2,19 +2,14 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../../redux/books/books';
+import { postBook } from '../../redux/books/books';
 
 function BookForm({ categories }) {
   const dispatch = useDispatch();
 
   const [formState, setFormState] = useState({});
 
-  const resetForm = (e) => {
-    const form = e.target;
-    Array.from(form.querySelectorAll('input')).forEach(
-      // eslint-disable-next-line no-param-reassign
-      (input) => { input.value = ''; },
-    );
+  const resetForm = () => {
     setFormState({});
   };
 
@@ -23,7 +18,7 @@ function BookForm({ categories }) {
     if (formState.title && formState.author) {
       const finalFormState = { ...formState };
       finalFormState.id = uuidv4();
-      dispatch(addBook(finalFormState));
+      dispatch(postBook(finalFormState));
       resetForm(e);
     }
   };
@@ -48,7 +43,7 @@ function BookForm({ categories }) {
             <input type="text" name="author" placeholder="Book Author" onChange={handleChange} required />
           </li>
           <li>
-            <select name="categories" id="select-category">
+            <select name="category" value={formState.category} onChange={handleChange} id="select-category">
               <option value="...">...</option>
               {categories?.map((category) => (
                 <option value={category} key={category}>
