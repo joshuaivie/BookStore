@@ -5,9 +5,6 @@ import BookForm from '../components/Books/BookForm';
 // import LoadingScreen from '../components/Shared/LoadingScreen';
 
 function Books() {
-  // const [loadingBookData, setLoadingBookData] = useState(true);
-  // const [bookData, setBookData] = useState([]);
-  // const [categories, setCategories] = useState([]);
 
   const books = useSelector((state) => state.books);
   console.log(books);
