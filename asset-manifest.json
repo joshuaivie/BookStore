@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/BookStore/static/js/main.d26dd215.js",
+    "static/media/profile.svg": "/BookStore/static/media/profile.ea0f871aca2bf351997349a0093dc78e.svg",
+    "index.html": "/BookStore/index.html",
+    "main.d26dd215.js.map": "/BookStore/static/js/main.d26dd215.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.d26dd215.js"
+  ]
+}
