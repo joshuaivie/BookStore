@@ -32,30 +32,26 @@ function BookForm({ categories }) {
   };
 
   return (
-    <div>
-      <div className="section-title">Add New Book</div>
-      <form onSubmit={handleSubmit}>
-        <ul>
-          <li>
-            <input type="text" name="title" placeholder="Book Title" onChange={handleChange} required />
-          </li>
-          <li>
-            <input type="text" name="author" placeholder="Book Author" onChange={handleChange} required />
-          </li>
-          <li>
-            <select name="category" value={formState.category} onChange={handleChange} id="select-category">
-              <option value="...">...</option>
-              {categories?.map((category) => (
-                <option value={category} key={category}>
-                  {category}
-                </option>
-              ))}
-            </select>
-          </li>
-          <li>
-            <button type="submit">Add Book</button>
-          </li>
-        </ul>
+    <div className="form-container">
+      <h2 className="form-title">Add New Book</h2>
+      <form className="flex flex-wrap" onSubmit={handleSubmit}>
+
+        <input className="form-title" type="text" name="title" placeholder="Book Title" onChange={handleChange} required />
+
+        <input className="form-author" type="text" name="author" placeholder="Book Author" onChange={handleChange} required />
+        <div className="form-book-category">
+          <select className="select" name="category" value={formState.category} onChange={handleChange} id="select-category">
+            <option value="...">...</option>
+            {categories?.map((category) => (
+              <option value={category} key={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <button className="add-btn flex" type="submit">Add Book</button>
+
       </form>
     </div>
   );

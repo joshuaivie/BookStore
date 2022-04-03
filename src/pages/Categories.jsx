@@ -3,7 +3,10 @@ import StatusButton from '../components/Categories/StatusButton';
 
 function Categories() {
   return (
-    <div><StatusButton /></div>
+    <section className="categories-section">
+      <h1 className="categories-progress">Coming Soon</h1>
+      <StatusButton />
+    </section>
   );
 }
 

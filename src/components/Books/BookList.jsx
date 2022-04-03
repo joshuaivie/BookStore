@@ -4,19 +4,19 @@ import Book from './Book';
 
 function BookList({ books }) {
   return (
-    <div className="book-list">
-      {books.length > 0
-        ? (
-          <ul>
-            {books.map((book) => (
-              <li key={book?.id}>
-                <Book author={book?.author} title={book?.title} id={book?.id} />
-              </li>
-            ))}
-          </ul>
-        )
-        : <div>No Books Yet</div>}
-    </div>
+    <ul className="flex">
+      {books.map((book) => (
+        <Book
+          author={book?.author}
+          title={book?.title}
+          id={book?.id}
+          key={book?.id}
+          category={book?.category}
+          progress={`${Math.floor(Math.random() * 100) + 1}%`}
+        />
+      ))}
+    </ul>
+
   );
 }
 

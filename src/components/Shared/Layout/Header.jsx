@@ -4,8 +4,8 @@ import ProfileImage from '../../../images/profile.svg';
 
 function Header() {
   return (
-    <div className="header">
-      <div>
+    <header className="header">
+      <div className="sub-head">
         <div className="logo">Bookstore CMS</div>
         <NavBar />
       </div>
@@ -13,7 +13,7 @@ function Header() {
         <img src={ProfileImage} alt="profile" width="30px" />
       </div>
 
-    </div>
+    </header>
   );
 }
 

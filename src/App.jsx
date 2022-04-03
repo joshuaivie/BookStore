@@ -6,6 +6,7 @@ import {
 import Layout from './components/Shared/Layout/Layout';
 import Books from './pages/Books';
 import Categories from './pages/Categories';
+import './styles/global.scss';
 
 export default function App() {
   return (

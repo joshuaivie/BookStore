@@ -12,20 +12,21 @@ function Books() {
     dispatch(getBooks());
   }, []);
 
-  const { books, loading } = bookState;
+  const { books, loading, error } = bookState;
   const catagories = ['Fiction', 'Business', 'Spiritual', 'Romance', 'Tech'];
 
   return (
-    <div>
+    <>
+      {error ? (<div>{error}</div>) : ''}
       {loading ? '' : (
-        <div>
+        <section className="booklist flex">
           {' '}
           <BookList books={books} />
           {' '}
           <BookForm categories={catagories} />
-        </div>
+        </section>
       )}
-    </div>
+    </>
   );
 }
 
