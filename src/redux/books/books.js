@@ -31,13 +31,10 @@ export const addBook = ({ id, author, title }) => ({
   },
 });
 
-export const removeBook = (id) => {
-  console.log(id);
-  return {
-    type: REMOVE_BOOK,
-    payload: id,
-  };
-};
+export const removeBook = (id) => ({
+  type: REMOVE_BOOK,
+  payload: id,
+});
 
 // Reducers
 const bookReducer = (state = initialState, action = {}) => {

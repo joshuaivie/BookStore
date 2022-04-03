@@ -9,12 +9,7 @@ function BookForm({ categories }) {
 
   const [formState, setFormState] = useState({});
 
-  const resetForm = (e) => {
-    const form = e.target;
-    Array.from(form.querySelectorAll('input')).forEach(
-      // eslint-disable-next-line no-param-reassign
-      (input) => { input.value = ''; },
-    );
+  const resetForm = () => {
     setFormState({});
   };
 
