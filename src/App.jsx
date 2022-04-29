@@ -13,7 +13,7 @@ export default function App() {
     <Layout>
       <Routes>
         <Route path="/categories" exact element={<Categories />} />
-        <Route path="/" element={<Books />} />
+        <Route path="*" element={<Books />} />
       </Routes>
     </Layout>
   );

@@ -13,7 +13,7 @@ function Books() {
   }, []);
 
   const { books, loading, error } = bookState;
-  const catagories = ['Fiction', 'Business', 'Spiritual', 'Romance', 'Tech'];
+  const catagories = ['Fiction', 'Business', 'Bible', 'Spiritual', 'Romance', 'Tech'];
 
   return (
     <>
