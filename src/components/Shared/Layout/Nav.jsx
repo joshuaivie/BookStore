@@ -6,7 +6,7 @@ function Nav() {
     <nav className="main-nav">
       <ul>
         <li>
-          <Link to="/">Books</Link>
+          <Link to="/BookStore">Books</Link>
         </li>
         <li>
           <Link to="/categories">Categories</Link>

@@ -1,10 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { BrowserRouter as Router } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { Outlet } from 'react-router-dom';
 import Header from './Header';
 
-function Layout({ children }) {
+function Layout() {
   return (
     <div className="app-layout">
       <Helmet>
@@ -15,16 +14,10 @@ function Layout({ children }) {
           content="A react application built to help you catalouge your books"
         />
       </Helmet>
-      <Router>
-        <Header />
-        <div className="layout-1">{children}</div>
-      </Router>
+      <Header />
+      <div className="layout-1"><Outlet /></div>
     </div>
   );
 }
 
 export default Layout;
-
-Layout.propTypes = {
-  children: PropTypes.element.isRequired,
-};

@@ -10,11 +10,11 @@ import './styles/global.scss';
 
 export default function App() {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/categories" exact element={<Categories />} />
-        <Route path="*" element={<Books />} />
-      </Routes>
-    </Layout>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="/categories" element={<Categories />} />
+        <Route index path="*" element={<Books />} />
+      </Route>
+    </Routes>
   );
 }
